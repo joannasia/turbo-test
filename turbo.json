@@ -6,9 +6,16 @@
 			"dependsOn": ["^build"],
 			"outputs": [".next/**", "!.next/cache/**"]
 		},
+		"docs#build": {
+			"dependsOn": ["ui#build"],
+			"outputs": ["storybook-static/**"]
+		},
 		"web#build": {
 			"dependsOn": ["ui#build"],
-			"outputs": [".next/**", "!.next/cache/**"]
+			"outputs": [".next/**"]
+		},
+		"ui#build": {
+			"inputs": ["src/**"]
 		},
 		"lint": {},
 		"dev": {
